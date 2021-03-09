@@ -1,0 +1,16 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Mакет №2 gulp'
+    - var pageBodyClass = 'homepage'
+    - var pageHeaderClass = ''
+
+block content
+    //- здесь код страницы
+    header.header
+        .header__logo
+             img(src="../assets/imgs/logo.png", alt="logo")
+        .header__title
+            img(src="../assets/imgs/titleImg.png", alt="titleImg")
+            .header__title--text An award-winning construction management firm
+        .header__footer Scroll down

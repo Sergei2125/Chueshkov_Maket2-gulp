@@ -1,0 +1,32 @@
+$bg-color: #FFF;
+
+/*body {
+    padding: 0px;
+    margin: 0px;
+}*/
+.container{
+    width: 940px;
+    margin: 0 auto;
+}
+header{
+    background: url(../imgs/header.jpg) no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+.header{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px 0px 70px 0px;
+
+    &__footer{
+        color: $bg-color;
+        text-transform: uppercase;
+    }
+
+    &__title--text{
+        color: $bg-color;
+    }
+
+}
