@@ -37,7 +37,7 @@ block content
                 .story__text Our story 
             .history
                 .history__content
-                    h2.history__content--title Founded in 2011 by John Mathew Smith, Konstruct has become the number one construction management firm
+                    h2.history__content--title Founded in 2011 by John Mathew Smith, <span class="history__content--title-blue">Konstruct</span> has become the number one construction management firm
                     p.history__content--text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .history__rules
                     .rule
@@ -57,7 +57,7 @@ block content
                 .capability-header__btn
                     a.btn(href="#") ALL SERVICES
             .capability-bottom
-                .capability-item
+                .capability-item  <!-- Здесь сделать миксином???-->
                     .capability-item__img
                         img(src="../assets/imgs/notebook.png", alt="notebookPicture")
                     .capability-item__title PROJECT AND CONSTRUCTION MANAGEMENT
@@ -84,17 +84,43 @@ block content
                 form.email__form
                     input.email__form--input(type="text" placeholder="test@youremail.com")
                     button.btn.email__form--btn SIGNUP
-//-    section.info
+    section.info
         .container
-             
+            .info-inner
                 .info-text
                     .info-text__title Company
                     .info-text__logo
                         img(src="../assets/imgs/logoWhite.png", alt="logo") 
                     .info-text__content Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .info-menu
-                    .info-menu__links
-                    .info-menu__faq 
-                    .info-menu__blog 
+                    .info-menu__title links
+                    .info-menu__content
+                        ul.info-items
+                            mixin item(text)
+                                li.info-item 
+                                    a.info-item__link(href="#")=text
+                            +item('home')
+                            +item('about')
+                            +item('services')
+                            +item('projects')
+                            +item('contact us')
+                        ul.info-menu__inner
+                            +item('faq')
+                            +item('terms')
+                            +item('careers')
+                        ul.info-menu__inner 
+                            +item('blog')
+                            +item('partners')
+                            +item('news')
                 .info-contact
+                    ul.contact-items
+                        li.contact-item
+                            p.contact-item__title contact us
+                        li.contact-item 
+                            a.contact-item__link(href="#") 213 Baker Street Oriel City Kounty 7000 KNW, Kountry Name 
+                        li.contact-item 
+                            a.contact-item__link(href="#") +23 994 233 4022
+                        li.contact-item 
+                            a.contact-item__link(href="#")  info@konstruct.com
                 .info-icons
+                    .p здесь будут </br>ссылки на соцсети)
