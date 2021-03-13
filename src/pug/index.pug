@@ -7,10 +7,94 @@ block vars
 
 block content
     //- здесь код страницы
-    header.header
-        .header__logo
-             img(src="../assets/imgs/logo.png", alt="logo")
-        .header__title
-            img(src="../assets/imgs/titleImg.png", alt="titleImg")
-            .header__title--text An award-winning construction management firm
-        .header__footer Scroll down
+    header
+        .header
+            .header__logo 
+                img(src="../assets/imgs/logoWhite.png", alt="logo")
+            .header__title
+                img.header__title-img(src="../assets/imgs/titleImg.png", alt="titleImg")
+                .header__title--text An award-winning construction management firm
+            .header__footer Scroll down
+    nav
+        .container
+            .nav
+                .nav__logo
+                    img(src="../assets/imgs/logoBlack.png", alt="logo")
+                ul.nav__content
+                    li.nav__content--item 
+                        a.nav__content--link(href="#") Home
+                    li.nav__content--item 
+                        a.nav__content--link.active(href="#") About
+                    li.nav__content--item 
+                        a.nav__content--link(href="#") Services
+                    li.nav__content--item 
+                        a.nav__content--link(href="#") Work
+                    li.nav__content--item 
+                        a.nav__content--link(href="#") Contact
+    section.our-history
+        .container
+            .story
+                .story__text Our story 
+            .history
+                .history__content
+                    h2.history__content--title Founded in 2011 by John Mathew Smith, Konstruct has become the number one construction management firm
+                    p.history__content--text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                .history__rules
+                    .rule
+                        img.rule__img(src="../assets/imgs/wePlan.png" alt="wePlan")
+                        span.rule__text we </br> plan
+                    .rule
+                        img.rule__img(src="../assets/imgs/manage.png" alt="weManage")
+                        span.rule__text we </br> manage
+                    .rule
+                        img.rule__img(src="../assets/imgs/build.png" alt="weBuild")
+                        span.rule__text we </br> build
+    section.capability
+        .container
+            .capability-header
+                .capability-header__title OUR CAPABILITIES
+                .capability-header__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                .capability-header__btn
+                    a.btn(href="#") ALL SERVICES
+            .capability-bottom
+                .capability-item
+                    .capability-item__img
+                        img(src="../assets/imgs/notebook.png", alt="notebookPicture")
+                    .capability-item__title PROJECT AND CONSTRUCTION MANAGEMENT
+                    .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                .capability-item
+                    .capability-item__img
+                        img(src="../assets/imgs/shop.png", alt="shopPicture")
+                    .capability-item__title STRUCTURE AUDIT AND MAINTENANCE
+                    .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                .capability-item
+                    .capability-item__img
+                        img(src="../assets/imgs/house.png", alt="housePicture")
+                    .capability-item__title FACTORY CONSTRUCTION AND MODELING
+                    .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+
+    .build
+        .build__title Want to build something amazing?
+        .build__btn 
+            a.btn(href="#") GET IN TOUCH
+    .subscribe
+        .container 
+            .email 
+                .email__text Newsletter Signup
+                form.email__form
+                    input.email__form--input(type="text" placeholder="test@youremail.com")
+                    button.btn.email__form--btn SIGNUP
+//-    section.info
+        .container
+             
+                .info-text
+                    .info-text__title Company
+                    .info-text__logo
+                        img(src="../assets/imgs/logoWhite.png", alt="logo") 
+                    .info-text__content Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                .info-menu
+                    .info-menu__links
+                    .info-menu__faq 
+                    .info-menu__blog 
+                .info-contact
+                .info-icons

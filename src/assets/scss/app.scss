@@ -1,32 +1,302 @@
-$bg-color: #FFF;
+@import "./main/stylesheet";
 
-/*body {
-    padding: 0px;
-    margin: 0px;
-}*/
+@import "./main/reset";
+
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+$bg-color: #FFF;
+$tx-black: #48555B;
+$it-blue: #00A4E5;
+
 .container{
-    width: 940px;
+    width: 970px;
     margin: 0 auto;
+    padding: 0 15px;
 }
-header{
-    background: url(../imgs/header.jpg) no-repeat;
-    height: 100vh;
-    background-size: cover;
-}
+
 .header{
+    background: url(../imgs/header.jpg) no-repeat;
+    height: 90vh;
+    background-size: cover;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    padding: 40px 0px 70px 0px;
+    padding: 40px 0px 70px;
 
     &__footer{
         color: $bg-color;
         text-transform: uppercase;
+        letter-spacing: 3.7px;
     }
-
+    &__logo{
+        max-width: 100%; // надо ли?
+    }
+    &__title-img{
+        //max-width: 100%;
+    }
     &__title--text{
+        padding: 20px 0 0;
         color: $bg-color;
     }
 
 }
+nav{
+    border-bottom: 1px solid #E6E6E6;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+
+    &__content{
+
+        &--item{
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        &--link{
+            text-decoration: none;
+            text-transform: uppercase;
+            padding-left: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 1px;
+
+            color: $tx-black;
+        }
+        &--link:hover{
+            color: $it-blue;
+        }
+    }
+}
+.active{
+    color: $it-blue;
+}
+.our-history{
+    margin: 60px 0px 60px;
+}
+.story{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0px 0px 57px;
+
+    &__text{
+        display: inline-block;
+        position: relative; 
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    &__text:before{
+        content: "";
+        background-image: url(../imgs/line.png);
+        position: absolute;
+        left: 35px;
+        top: 35px;
+        width: 50px;
+        height: 2px;
+
+    }
+    
+}
+.history{
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__content{
+        flex: 0 0 50%;
+        max-width: 50%;
+        color: $tx-black;
+        padding-right: 75px;
+        &--title{
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 27px;
+            padding: 0 0 30px;
+        }
+        &--text{
+            font-size: 13px;
+            line-height: 23px;
+        }
+    }
+    &__rules{
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.rule{
+    position: relative;
+    &__img{
+        max-width: 100%;
+    }
+    &__text{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: $bg-color;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 11px 0px;
+    text-align: center;
+    background-color: $it-blue;
+    height: 40px;
+    width: 150px;
+    color: $bg-color;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+}
+.capability{
+    margin: 115px 0 115px;
+}
+.capability-header{
+    margin: 0 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__title{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: $tx-black;
+        width: 200px;
+        position: relative;
+        letter-spacing: 2px;
+    }
+    &__title:before{
+        content: "";
+        background-image: url(../imgs/line.png);
+        position: absolute;
+        top: 35px;
+        width: 50px;
+        height: 2px;
+
+    }
+    &__text{
+        font-size: 11px;
+        line-height: 19px;
+        color: $tx-black;
+        width: 400px;
+        margin-left: 120px;
+    }
+    &__btn{
+    }
+}
+.capability-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.capability-item{
+    flex: 0 0 295px;
+    max-width: 295px;
+    padding: 38px 22px;
+    color: $tx-black;
+    border: 1px solid #E6E6E6;
+    
+
+    &__img{}
+    &__title{
+        margin: 25px 0 13px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.4px;
+    }
+    &__text{
+        font-size: 13px;
+        line-height: 23px;
+    }
+}
+.build{
+    background: url("../imgs/city.jpg");
+    height: 498px;
+    text-align: center;
+    &__title{
+        display: inline-block;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 36px;
+        color: $tx-black;
+        width: 350px;
+        margin: 120px 0 35px;
+    }
+    &__btn{
+
+    }
+}
+
+.subscribe{
+    background: #171819;
+    
+}
+.email{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0px;
+    &__text{
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        color: $bg-color;
+    }
+    &__form{
+        display: flex;
+    }
+    &__form--input{
+        border: none;
+        width: 250px;
+        padding: 0 15px 0;
+    }
+    &__form--btn{
+        letter-spacing: 1px;
+        border: none;
+    }
+
+}
+/*.info{
+    background: #171819;
+    color: $bg-color;
+    padding: 40px 0 40px;
+}
+
+
+.info-text{
+    width: 250px;
+    &__title{
+        text-transform: uppercase;
+        font-size: 11px;
+        line-height: 15px;
+    }
+    &__logo{
+        margin: 19px 0px 15px;
+    }
+    &__content{
+        font-size: 11px;
+        line-height: 19px;
+        letter-spacing: 0.85px;
+    }
+}
+*/
