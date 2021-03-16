@@ -10,48 +10,46 @@ block content
     header
         .header
             .header__logo 
-                img(src="../assets/imgs/logoWhite.png", alt="logo")
+                img.header__logo-img(src="../assets/imgs/logoWhite.png", alt="logo")
             .header__title
-                img.header__title-img(src="../assets/imgs/titleImg.png", alt="titleImg")
-                //это тоже не модификатор, а элемент
-                .header__title--text An award-winning construction management firm
+                img.header__img(src="../assets/imgs/titleImg.png", alt="titleImg")
+                .header__text An award-winning construction management firm
             .header__footer Scroll down
     nav
         .container
             .nav
                 .nav__logo
                     img(src="../assets/imgs/logoBlack.png", alt="logo")
-                ul.nav__content
-                    // что-то перемудрено, -- это модификатор, здесь просто элементы
-                    li.nav__content--item 
-                        a.nav__content--link(href="#") Home
-                    li.nav__content--item 
-                        a.nav__content--link.active(href="#") About
-                    li.nav__content--item 
-                        a.nav__content--link(href="#") Services
-                    li.nav__content--item 
-                        a.nav__content--link(href="#") Work
-                    li.nav__content--item 
-                        a.nav__content--link(href="#") Contact
+                ul.nav__list
+                    li.nav__item 
+                        a.nav__link(href="#") Home
+                    li.nav__item 
+                        a.nav__link.active(href="#") About
+                    li.nav__item 
+                        a.nav__link(href="#") Services
+                    li.nav__item 
+                        a.nav__link(href="#") Work
+                    li.nav__item 
+                        a.nav__link(href="#") Contact
     section.our-history
         .container
             .story
                 .story__text Our story 
             .history
                 .history__content
-                    //тоже модификаторы не нужны
-                    h2.history__content--title Founded in 2011 by John Mathew Smith, <span class="history__content--title-blue">Konstruct</span> has become the number one construction management firm
-                    p.history__content--text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+                    h2.history__title Founded in 2011 by John Mathew Smith, <span class="history__title--blue">Konstruct</span> has become the number one construction management firm
+                    p.history__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .history__rules
-                    // здесь можно миксин с переменной для картинки
+                    mixin ruleImg(rule_img,rule_alt)
+                        img.rule__img(src=rule_img alt=rule_alt)
                     .rule
-                        img.rule__img(src="../assets/imgs/wePlan.png" alt="wePlan")
+                        +ruleImg("../assets/imgs/wePlan.png","wePlan")
                         span.rule__text we </br> plan
                     .rule
-                        img.rule__img(src="../assets/imgs/manage.png" alt="weManage")
+                        +ruleImg("../assets/imgs/manage.png","weManage")
                         span.rule__text we </br> manage
                     .rule
-                        img.rule__img(src="../assets/imgs/build.png" alt="weBuild")
+                        +ruleImg("../assets/imgs/build.png","weBuild")
                         span.rule__text we </br> build
     section.capability
         .container
@@ -61,21 +59,21 @@ block content
                 .capability-header__btn
                     a.btn(href="#") ALL SERVICES
             .capability-bottom
-                <!-- Здесь сделать миксином???-->
-                // да, можно миксин с одной переменной для картинки
+                mixin capabilityImg(cap_img,cap_alt)
+                    img(src=cap_img, alt=cap_alt)
                 .capability-item
                     .capability-item__img
-                        img(src="../assets/imgs/notebook.png", alt="notebookPicture")
+                        +capabilityImg("../assets/imgs/notebook.png","notebookPicture")
                     .capability-item__title PROJECT AND CONSTRUCTION MANAGEMENT
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .capability-item
                     .capability-item__img
-                        img(src="../assets/imgs/shop.png", alt="shopPicture")
+                        +capabilityImg("../assets/imgs/shop.png","shopPicture")
                     .capability-item__title STRUCTURE AUDIT AND MAINTENANCE
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .capability-item
                     .capability-item__img
-                        img(src="../assets/imgs/house.png", alt="housePicture")
+                        +capabilityImg("../assets/imgs/house.png","housePicture")
                     .capability-item__title FACTORY CONSTRUCTION AND MODELING
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
 
@@ -88,9 +86,8 @@ block content
             .email 
                 .email__text Newsletter Signup
                 form.email__form
-                    //опять модификаторы
-                    input.email__form--input(type="text" placeholder="test@youremail.com")
-                    button.btn.email__form--btn SIGNUP
+                    input.email__input(type="text" placeholder="test@youremail.com")
+                    button.btn.email__btn SIGNUP
     section.info
         .container
             .info-inner
@@ -126,8 +123,13 @@ block content
                         li.contact-item 
                             a.contact-item__link(href="#") 213 Baker Street Oriel City Kounty 7000 KNW, Kountry Name 
                         li.contact-item 
-                            a.contact-item__link(href="#") +23 994 233 4022
+                            a.contact-item__link(href="tel:") +23 994 233 4022
                         li.contact-item 
-                            a.contact-item__link(href="#")  info@konstruct.com
-                .info-icons
-                    .p здесь будут </br>ссылки на соцсети)
+                            a.contact-item__link(href="mailto:info@konstruct.com") info@konstruct.com
+                .info-icon
+                    a.info-icon__link(href="#") 
+                        img.info-icon__img(src="../assets/imgs/socials.svg", alt="socialPicture")
+    footer.footer 
+        .container 
+            .footer__text © 2017 Konstruct Inc. Designed by Jane Kathryn Teo 
+

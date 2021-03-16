@@ -2,6 +2,8 @@
 
 @import "./main/reset";
 
+//https://www.figma.com/file/rNiXqHCTlEwNN94O22bLUT/konstruct-template-(Copy)?node-id=0%3A1
+
 html{
     font-family: 'Open Sans', sans-serif;
 }
@@ -18,10 +20,33 @@ $it-blue: #00A4E5;
     margin: 0 auto;
     padding: 0 15px;
 }
+@media (max-width: 970px){
+    .container{
+        width: 730px;
+    }
+}
+@media (max-width: 729px){
+    .container{
+        width: 425px;
+    }
+}
+@media (max-width: 424px){
+    .container{
+        width: 375px;
+    }
+}
+@media (max-width: 374px){
+    .container{
+        width: 320px;
+    }
+}
 
+header{
+    position: relative;
+}
 .header{
     background: url(../imgs/header.jpg) no-repeat;
-    height: 90vh;
+    height: 100vh;
     background-size: cover;
     display:flex;
     flex-direction: column;
@@ -29,26 +54,53 @@ $it-blue: #00A4E5;
     text-align: center;
     padding: 40px 0px 70px;
 
+    &__logo-img{
+        max-width: 100%;
+    }
+    &__title{}
+    &__img{
+        max-width: 100%;
+    }
+    &__text{
+        padding: 20px 0 0;
+        color: $bg-color;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+    }
     &__footer{
         color: $bg-color;
         text-transform: uppercase;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 15px;
         letter-spacing: 3.7px;
     }
-    &__logo{
-        //этому блоку нет, а картинке логотипа возможно на адаптиве понадобится
-        max-width: 100%; // надо ли?
-    }
-    &__title-img{
-        //max-width: 100%;
-    }
-    &__title--text{
-        padding: 20px 0 0;
-        color: $bg-color;
-    }
+}
+@media (max-width: 729px){
+    .header{
+        height: 50vh;
+        padding: 40px 0;
 
+        &__logo-img{
+            max-width: 50%;
+        }
+        &__img{
+            max-width: 50%;
+        }
+        &__text{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        }
+    }
 }
 nav{
     border-bottom: 1px solid #E6E6E6;
+    background: $bg-color;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .nav{
     display: flex;
@@ -56,39 +108,41 @@ nav{
     align-items: center;
     height: 10vh;
 
-    &__content{
+    &__logo{
+        max-width: 100%;
+    }
+    &__list{}    
+    &__item{
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    &__link{
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-left: 20px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 1px;
 
-        &--item{
-            display: inline-block;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        &--link{
-            text-decoration: none;
-            text-transform: uppercase;
-            padding-left: 20px;
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 16px;
-            letter-spacing: 1px;
-
-            color: $tx-black;
-        }
-        &--link:hover{
-            color: $it-blue;
-        }
+        color: $tx-black;
+    }
+    &__link:hover{
+        color: $it-blue;
+        transition: color ease 0.3s;
     }
 }
 .active{
     color: $it-blue;
 }
 .our-history{
-    margin: 60px 0px 60px;
+    margin: 30px 0px 30px;
 }
 .story{
     text-align: center;
     text-transform: uppercase;
-    padding: 0px 0px 57px;
+    padding: 30px 0px 57px;
 
     &__text{
         display: inline-block;
@@ -109,6 +163,7 @@ nav{
 
     }
 }
+
 .history{
     display: flex;
     flex: 0 0 50%;
@@ -120,25 +175,47 @@ nav{
         max-width: 50%;
         color: $tx-black;
         padding-right: 75px;
-        &--title{
+    }
+    &__rules{
+            flex: 0 0 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: space-between;
+    }
+
+    &__title{
             font-weight: bold;
             font-size: 20px;
             line-height: 27px;
             padding: 0 0 30px;
-        }
-        &--title-blue{
-            color: $it-blue;            
-        }
-        &--text{
-            font-size: 13px;
-            line-height: 23px;
-        }
     }
-    &__rules{
-        flex: 0 0 50%;
-        max-width: 50%;
-        display: flex;
-        justify-content: space-between;
+    &__text{
+            font-size: 13px;
+            line-height: 23px; 
+    }
+    &__title--blue{
+            color: $it-blue;
+    }
+}
+@media (max-width: 729px){
+    .story{
+        padding: 0 0 30px;
+    }
+    .history{
+        display: block;
+
+        &__content{
+            display: block;
+            max-width: 100%;
+            padding: 0;
+        }
+        &__text{
+            padding: 0 0 30px;
+        }
+        &__rules{
+            max-width: 100%;
+            text-align: center;
+        }
     }
 }
 .rule{
@@ -157,6 +234,15 @@ nav{
         line-height: 29px;
     }
 }
+@media (max-width: 970px){
+    .rule__img{
+        max-width: 90%;
+    }
+    .rule__text{
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
 .btn{
     display: inline-block;
     text-decoration: none;
@@ -170,12 +256,16 @@ nav{
     font-size: 13px;
     line-height: 18px;
     letter-spacing: 0.5px;
+    transition: opacity ease 0.3s;
+}
+.btn:hover{
+    opacity: 0.7;
+    transition: opacity ease 0.3s;
 }
 .capability{
-    margin: 115px 0 115px;
+    margin: 115px 0 100px;
 }
 .capability-header{
-    margin: 0 0 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -198,6 +288,7 @@ nav{
 
     }
     &__text{
+        padding: 0 0 20px;
         font-size: 11px;
         line-height: 19px;
         color: $tx-black;
@@ -205,6 +296,7 @@ nav{
         margin-left: 120px;
     }
     &__btn{
+        padding: 0 0 20px;
     }
 }
 .capability-bottom{
@@ -215,6 +307,7 @@ nav{
     flex: 0 0 295px;
     max-width: 295px;
     padding: 38px 22px;
+    margin: 10px 0 10px;
     color: $tx-black;
     border: 1px solid #E6E6E6;
     
@@ -231,6 +324,28 @@ nav{
         font-size: 13px;
         line-height: 23px;
     }
+}
+@media (max-width: 970px){
+    .capability{
+        margin: 60px 0 0px;
+    }
+    .capability-header{
+        justify-content: space-around;
+
+
+        &__title{
+            margin: 0 0 30px;
+        }
+        &__text{
+            margin:0 60px;
+        }
+    }
+    .capability-bottom{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 729px){
 }
 .build{
     background: url("../imgs/city.jpg");
@@ -249,7 +364,22 @@ nav{
 
     }
 }
+@media (max-width: 729px){
+    .build{
+    }
+    .build__title{
+        margin: 30px 0;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+    }
 
+}
+@media (max-width: 374px){
+    .build__title{
+        width: 290px;
+    }
+}
 .subscribe{
     background: #171819;
     
@@ -268,21 +398,40 @@ nav{
     &__form{
         display: flex;
     }
-    &__form--input{
+    &__input{
         border: none;
         width: 250px;
-        padding: 0 15px 0;
+        height: 40px;
+        padding: 0 15px;
+        margin: 0 0 20px;
     }
-    &__form--btn{
+    &__input:hover{
+        border: 1px solid $tx-black;
+    }
+    &__btn{
         letter-spacing: 1px;
         border: none;
     }
 
 }
+@media (max-width: 729px){
+    .email{
+        display: block;
+    }
+    .email__text{
+        padding: 0 0 20px;
+        text-align: center;
+    }
+    .email__form{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
 .info{
-    background: #171819;
+    background: #141A20;
     color: $bg-color;
-    padding: 40px 0 40px;
+    padding: 40px 0;
 }
 .info-inner{
     display: flex;
@@ -330,7 +479,7 @@ nav{
     }
     &__link:hover{
         color:$it-blue;
-        transition: 0.3s;
+        transition: color ease 0.3s;
     }
 }
 .contact-items{
@@ -350,9 +499,45 @@ nav{
         text-decoration: none;
         font-size: 11px;
         line-height: 16px;
-
-        letter-spacing: 0.85px;
     }
-   
+        letter-spacing: 0.85px;
+    &__link:hover{
+        color:$it-blue;
+        transition: color ease 0.3s;
+    }
+}
+.contact-item:nth-child(3){
+    margin: 10px 0 10px;    
+}
+.info-icon{
+    margin: 30px 0 0;
+    &__img{
+        max-width: 100%;
+    }
+    &__img:hover{
+        border-bottom: 1px solid $it-blue;
+    }
+}
+.footer{
+    background-color: #171819;
+    &__text{
+        text-align: center;
+        padding: 23px 0 23px;
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: 0.85px;
+        color: $bg-color;
+    }
+}
+@media (max-width: 970px){
+    .info-inner{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 
+@media (max-width: 729px){
+    .info-inner>div{
+        margin: 15px 0;
+    }
+}
