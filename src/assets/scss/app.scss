@@ -27,10 +27,10 @@ $it-blue: #00A4E5;
 }
 @media (max-width: 729px){
     .container{
-        width: 425px;
+        max-width: 96%;
     }
 }
-@media (max-width: 424px){
+/*@media (max-width: 424px){
     .container{
         width: 375px;
     }
@@ -40,7 +40,7 @@ $it-blue: #00A4E5;
         width: 320px;
     }
 }
-
+*/
 header{
     position: relative;
 }
@@ -48,6 +48,7 @@ header{
     background: url(../imgs/header.jpg) no-repeat;
     height: 100vh;
     background-size: cover;
+    background-position: center;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,7 +63,7 @@ header{
         max-width: 100%;
     }
     &__text{
-        padding: 20px 0 0;
+        padding: 20px 20px;
         color: $bg-color;
         font-weight: 600;
         font-size: 16px;
@@ -79,14 +80,14 @@ header{
 }
 @media (max-width: 729px){
     .header{
-        height: 50vh;
+        height: 100vh;
         padding: 40px 0;
 
         &__logo-img{
             max-width: 50%;
         }
         &__img{
-            max-width: 50%;
+            max-width: 80%;
         }
         &__text{
         font-weight: 500;
@@ -95,6 +96,7 @@ header{
         }
     }
 }
+
 nav{
     border-bottom: 1px solid #E6E6E6;
     background: $bg-color;
@@ -198,9 +200,7 @@ nav{
     }
 }
 @media (max-width: 729px){
-    .story{
-        padding: 0 0 30px;
-    }
+    
     .history{
         display: block;
 
@@ -215,6 +215,8 @@ nav{
         &__rules{
             max-width: 100%;
             text-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
     }
 }
@@ -232,6 +234,7 @@ nav{
         font-weight: 800;
         font-size: 24px;
         line-height: 29px;
+        text-align: left;
     }
 }
 @media (max-width: 970px){
@@ -239,8 +242,15 @@ nav{
         max-width: 90%;
     }
     .rule__text{
+        left: 20px;
         font-size: 18px;
         font-weight: 700;
+        
+    }
+}
+@media (max-width: 729px){
+    .rule{
+        margin: 12px 10px;
     }
 }
 .btn{
@@ -307,7 +317,7 @@ nav{
     flex: 0 0 295px;
     max-width: 295px;
     padding: 38px 22px;
-    margin: 10px 0 10px;
+    margin: 10px;
     color: $tx-black;
     border: 1px solid #E6E6E6;
     
@@ -342,7 +352,7 @@ nav{
     }
     .capability-bottom{
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
     }
 }
 @media (max-width: 729px){
@@ -378,6 +388,8 @@ nav{
 @media (max-width: 374px){
     .build__title{
         width: 290px;
+        font-size: 22px;
+        line-height: 26px;
     }
 }
 .subscribe{
@@ -431,7 +443,7 @@ nav{
 .info{
     background: #141A20;
     color: $bg-color;
-    padding: 40px 0;
+    padding: 30px 0;
 }
 .info-inner{
     display: flex;
@@ -440,6 +452,7 @@ nav{
 
 .info-text{
     width: 250px;
+    margin: 10px;
     &__title{
         text-transform: uppercase;
         font-size: 11px;
@@ -455,6 +468,7 @@ nav{
     }
 }
 .info-menu{
+    margin: 10px;
     text-transform: uppercase;
 }
 .info-menu__title{
@@ -482,6 +496,9 @@ nav{
         transition: color ease 0.3s;
     }
 }
+.info-contact{
+    margin: 10px;
+}
 .contact-items{
     width: 141px;    
 }
@@ -507,10 +524,10 @@ nav{
     }
 }
 .contact-item:nth-child(3){
-    margin: 10px 0 10px;    
+    margin: 10px 0;    
 }
 .info-icon{
-    margin: 30px 0 0;
+    margin: 30px 10px 10px;
     &__img{
         max-width: 100%;
     }
@@ -536,8 +553,3 @@ nav{
     }
 }
 
-@media (max-width: 729px){
-    .info-inner>div{
-        margin: 15px 0;
-    }
-}
