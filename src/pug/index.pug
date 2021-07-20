@@ -10,16 +10,16 @@ block content
     header
         .header
             .header__logo 
-                img.header__logo-img(src="../assets/imgs/logoWhite.png", alt="logo")
+                img.header__logo-img(src="./assets/imgs/logoWhite.png", alt="logo")
             .header__title
-                img.header__img(src="../assets/imgs/titleImg.png", alt="titleImg")
+                img.header__img(src="./assets/imgs/titleImg.png", alt="titleImg")
                 .header__text An award-winning construction management firm
             .header__footer Scroll down
     nav
         .container
             .nav
                 .nav__logo
-                    img(src="../assets/imgs/logoBlack.png", alt="logo")
+                    img(src="./assets/imgs/logoBlack.png", alt="logo")
                 ul.nav__list
                     li.nav__item 
                         a.nav__link(href="#") Home
@@ -43,13 +43,13 @@ block content
                     mixin ruleImg(rule_img,rule_alt)
                         img.rule__img(src=rule_img alt=rule_alt)
                     .rule
-                        +ruleImg("../assets/imgs/wePlan.png","wePlan")
+                        +ruleImg("./assets/imgs/wePlan.png","wePlan")
                         span.rule__text we </br> plan
                     .rule
-                        +ruleImg("../assets/imgs/manage.png","weManage")
+                        +ruleImg("./assets/imgs/manage.png","weManage")
                         span.rule__text we </br> manage
                     .rule
-                        +ruleImg("../assets/imgs/build.png","weBuild")
+                        +ruleImg("./assets/imgs/build.png","weBuild")
                         span.rule__text we </br> build
     section.capability
         .container
@@ -63,17 +63,17 @@ block content
                     img(src=cap_img, alt=cap_alt)
                 .capability-item
                     .capability-item__img
-                        +capabilityImg("../assets/imgs/notebook.png","notebookPicture")
+                        +capabilityImg("./assets/imgs/notebook.png","notebookPicture")
                     .capability-item__title PROJECT AND CONSTRUCTION MANAGEMENT
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .capability-item
                     .capability-item__img
-                        +capabilityImg("../assets/imgs/shop.png","shopPicture")
+                        +capabilityImg("./assets/imgs/shop.png","shopPicture")
                     .capability-item__title STRUCTURE AUDIT AND MAINTENANCE
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .capability-item
                     .capability-item__img
-                        +capabilityImg("../assets/imgs/house.png","housePicture")
+                        +capabilityImg("./assets/imgs/house.png","housePicture")
                     .capability-item__title FACTORY CONSTRUCTION AND MODELING
                     .capability-item__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
 
@@ -94,7 +94,7 @@ block content
                 .info-text
                     .info-text__title Company
                     .info-text__logo
-                        img(src="../assets/imgs/logoWhite.png", alt="logo") 
+                        img(src="./assets/imgs/logoWhite.png", alt="logo") 
                     .info-text__content Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
                 .info-menu
                     .info-menu__title links
@@ -128,7 +128,7 @@ block content
                             a.contact-item__link(href="mailto:info@konstruct.com") info@konstruct.com
                 .info-icon
                     a.info-icon__link(href="#") 
-                        img.info-icon__img(src="../assets/imgs/socials.svg", alt="socialPicture")
+                        img.info-icon__img(src="./assets/imgs/socials.svg", alt="socialPicture")
     footer.footer 
         .container 
             .footer__text © 2017 Konstruct Inc. Designed by Jane Kathryn Teo 
